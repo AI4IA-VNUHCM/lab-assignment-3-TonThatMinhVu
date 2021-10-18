@@ -13,8 +13,18 @@ Ex:
 #include <math.h>
 
 void Ex1(int arr[], int n){
-	//Your codes here
-    
+		int ktr = 1;
+	for (int i = 0, j = n - 1; i <= (n - 1) % 2 && j >=(n - 1) % 2 ; i++,j--)
+		if (arr[i] != arr[j])
+		{
+			ktr = 0;
+			break;
+		}
+	if (ktr == 1)
+		printf("symmetric");
+	else
+		printf("asymmetric");
+
 }
 
 int main(int argc, char *argv[]) {

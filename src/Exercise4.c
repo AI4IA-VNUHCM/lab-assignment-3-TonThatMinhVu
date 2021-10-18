@@ -14,7 +14,32 @@ ______________________________________
 
 int Ex4(int arr[], int n){
 	//Your codes here
-	
+	int ktra;
+	if (arr[0] >= arr[1])
+	{
+		ktra = -1;
+		for (int i = 0; i < n - 1; i++)
+			for (int j = i + 1; j < n; j++)
+			{
+				if (arr[i] < arr[j])
+				{
+					ktra = 0;
+					break;
+				}
+			}
+	}
+	else
+	{
+		ktra = 1;
+		for (int i = 0; i < n - 1; i++)
+			for (int j = i + 1; j < n; j++)
+			{
+				if (arr[i] > arr[j])
+					ktra = 0;
+				break;
+			}
+	}
+	return ktra;
 }
 
 int main(int argc, char *argv[]) {

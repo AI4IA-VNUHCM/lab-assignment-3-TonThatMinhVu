@@ -13,9 +13,66 @@ Ex:
 #include <math.h>
 
 void Ex3(int in_arr[], int n){
-	//Your codes here
-	
+{
+
+int max = 1, len = 1, maxIndex = 0;
+
+for (int i=1; i<n; i++)
+
+{
+
+if (in_arr[i] > in_arr[i-1])
+
+len++;
+
+else
+
+{
+
+if (max < len)
+
+{
+
+max = len;
+
+maxIndex = i - max;
+
 }
+
+len = 1;
+
+}
+
+}
+
+if (max < len)
+
+{
+
+max = len;
+
+maxIndex = n - max;
+
+}
+
+for (int i=maxIndex; i<max+maxIndex; i++)
+
+printf("%d ",in_arr[i]);
+
+}
+
+int main()
+
+int arr[n];
+
+for(int i=0;i<n;i++)
+
+printLogestIncSubArr(arr, n);
+
+return 0;
+
+}
+
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
